@@ -35,4 +35,10 @@ jobs:
           java-version: '17'
           distribution: 'zulu'
       - name: Run the Maven verify phase
-        run: d GhActionsDemo && mvn --batch-mode --update-snapshots package
+        run: cd GhActionsDemo && mvn --batch-mode --update-snapshots package
+      
+      - name: Publish Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Compiled JAR
+          path: GhActionsDemo/target/GhActionsDemo-0.0.1-SNAPSHOT.jar
