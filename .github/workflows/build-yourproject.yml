@@ -1,0 +1,11 @@
+name: Demo  to  writing Github  Action  Build Scripts   
+
+on:
+  pull_request:
+    branches:
+      - '**'
+  push:
+    branches:
+      - master
+      - main
+      - development 
